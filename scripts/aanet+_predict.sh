@@ -11,6 +11,8 @@ CUDA_VISIBLE_DEVICES=0 python predict.py \
 --data_dir rund \
 --pretrained_aanet $MODEL \
 --feature_type ganet \
+--save_type pfm \
 --feature_pyramid \
+--visualize \
 --refinement_type hourglass \
 --no_intermediate_supervision
