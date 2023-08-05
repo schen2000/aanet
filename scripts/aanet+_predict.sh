@@ -8,7 +8,7 @@ IMG_DIR=rund
 
 
 CUDA_VISIBLE_DEVICES=0 python predict.py \
---data_dir rund \
+--data_dir rund/frms \
 --pretrained_aanet $MODEL \
 --feature_type ganet \
 --save_type pfm \
