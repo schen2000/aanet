@@ -59,8 +59,8 @@ parser.add_argument('--save_type', default='png', choices=['pfm', 'png', 'npy', 
 parser.add_argument('--visualize', action='store_true', help='Visualize disparity map')
 
 # Log
-parser.add_argument('--save_suffix', default='pred', type=str, help='Suffix of save filename')
-parser.add_argument('--save_dir', default='pred', type=str, help='Save prediction directory')
+parser.add_argument('--save_suffix', default='', type=str, help='Suffix of save filename')
+parser.add_argument('--save_dir', default='disp_aanet', type=str, help='Save prediction directory')
 
 args = parser.parse_args()
 
@@ -176,7 +176,7 @@ def main():
 
         disp = pred_disp[0].detach().cpu().numpy()  # [H, W]
 
-        save_name = os.path.basename(left_name)[:-4] + '_' + args.save_suffix + '.png'
+        save_name = os.path.basename(left_name)[:-4] + args.save_suffix + '.png'
         save_name = os.path.join(args.output_dir, save_name)
 
         if args.save_type == 'pfm':
